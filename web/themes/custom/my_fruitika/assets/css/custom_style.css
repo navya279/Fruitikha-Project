@@ -1,0 +1,14 @@
+nav.main-menu > ul li:last-child
+{
+    float:inherit !important ;
+}
+ /* #sticker{
+    background-color: black !important;
+} */
+/* @TODO - Fix and remove banner height issue. Temporarly fixed as below. */
+.homepage-slider.owl-carousel.owl-loaded {
+    height: 569px;
+}
+.form_fields{
+    padding-bottom:5px;
+}

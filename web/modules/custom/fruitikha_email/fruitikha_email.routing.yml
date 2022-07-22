@@ -1,0 +1,7 @@
+fruitikha_email.email_custom:
+  path : '/custom_registration'
+  defaults :
+    _form : 'Drupal\fruitikha_email\Form\CustomRegistration'
+    _title : 'Registration Form'
+  requirements:
+    _permission: 'access content'

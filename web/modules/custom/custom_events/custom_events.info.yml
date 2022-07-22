@@ -1,0 +1,4 @@
+name: Custom Events
+type: module
+description: 'This module for understanding eventsubscriber and componets.'
+core_version_requirement: ^8||^9

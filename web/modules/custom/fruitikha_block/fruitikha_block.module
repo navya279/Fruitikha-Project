@@ -1,0 +1,28 @@
+<?php
+  /**
+   * This alter is used for creating new suggestions.
+   * function MYMODULE_theme_suggestions_block_alter(array &$suggestions, array $variables, $hook) { }
+   */
+  function fruitikha_block_theme_suggestions_block_alter( array &$suggestions,array $variables,$hook) {
+  //  $r = \Drupal::configFactory()->get('core.extension')->get('theme');
+  //  unset($r['my_fruitika']);
+  //  \Drupal::service('config.factory')->getEditable('core.extension')->set('theme', []);
+  //  dump(\Drupal::configFactory()->get('core.extension')->get('theme'));
+  //  exit;
+    if(!empty($variables['elements']['content']['#block_content'])){
+        $block = $variables['elements']['content']['#block_content'];
+        // $block->bundle() give block type name.
+        $suggestions[] = 'block__' . $block->bundle();
+    }
+   
+  }
+  function fruitikha_block_theme_suggestions_page_alter( array &$suggestions,array $variables,$hook) {
+    
+    //check page is for node
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      // You can get nid and anything else you need from the node object.
+      $suggestions[] = 'page__'. $node->bundle();
+    }
+   
+  }

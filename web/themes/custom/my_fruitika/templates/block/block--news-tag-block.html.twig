@@ -1,0 +1,15 @@
+{% extends "@stable/block/block.html.twig" %}
+  {% block content %}
+   <!-- {{ dump (content['node_tags'] |keys)}}  -->
+    <div class="tag-section">
+        <h4>Tags</h4>
+        <ul>
+            {% for row in content['node_tags'] %}
+              <li><a href="http://localhost/navya/fruitikha/web{{ row['#url'] }}"> {{ row['#title'] }} </a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- to clear cache , cache set in this corresponding block -->
+    {{ {'#cache': content['#cache']}|render }}
+    <!-- ecd cache -->
+  {% endblock %}

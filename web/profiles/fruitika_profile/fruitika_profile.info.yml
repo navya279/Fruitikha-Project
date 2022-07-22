@@ -1,0 +1,46 @@
+name: Fruitika Profile
+type: profile
+description: 'This is fruitika profile'
+core_version_requirement: '^8 || ^9'
+dependencies:
+  - node
+  - history
+  - block
+  - breakpoint
+  - ckeditor
+  - config
+  - comment
+  - contextual
+  - contact
+  - menu_link_content
+  - datetime
+  - block_content
+  - editor
+  - help
+  - image
+  - menu_ui
+  - options
+  - path
+  - page_cache
+  - dynamic_page_cache
+  - big_pipe
+  - taxonomy
+  - dblog
+  - search
+  - shortcut
+  - toolbar
+  - field_ui
+  - file
+  - rdf
+  - views
+  - views_ui
+  - tour
+  - automated_cron
+  - fruitikha_block
+  - fruitikha_latest_news
+  - fruitikha_site
+  - admin_toolbar
+
+themes:
+  - my_fruitika
+  - claro

@@ -1,0 +1,9 @@
+fruitikha_block.site_settings:
+  path : '/custom_site_settings'
+  defaults :
+    _form : 'Drupal\fruitikha_block\Form\CustomSiteSettings'
+    _title : 'Custom Site Settings'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission : 'administer blocks'

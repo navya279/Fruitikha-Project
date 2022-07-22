@@ -1,0 +1,26 @@
+{% extends "@stable/block/block.html.twig" %}
+{% block content %}
+  <!-- home page slider -->
+	<div class="homepage-slider">
+		<!-- single home slider -->
+        {% for row in content["view_build"]["#rows"][0]['#rows'] %}
+		  <div class="single-homepage-slider" style="background-image: url({{ file_url(row['#node'].field_image.entity.fileuri) }})">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0 text-center">
+						<div class="hero-text">
+							<div class="hero-text-tablecell">
+								<p class="subtitle">{{ row['#node'].field_subtitle.0.value }}</p>
+								<h1>{{ row['#node'].label }}</h1>
+								<div class="hero-btns">
+									<a href="shop.html" class="boxed-btn">{{ row['#node'].field_button_first.0.value }}</a>
+									<a href="contact.html" class="bordered-btn">{{ row['#node'].field_button_second.0.value }}</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        {% endfor %}
+{% endblock %}

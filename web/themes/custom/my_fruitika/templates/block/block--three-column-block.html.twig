@@ -1,0 +1,28 @@
+{% extends "@stable/block/block.html.twig" %}
+  {% block content %}
+    <div class="list-section pt-80 pb-80">
+      <div class="container">
+        <div class="row">
+        {% set row_subclass = '' %}
+        {% for row in content['#block_content'].field_select_list %}
+            {% if loop.first %}
+              {% set row_subclass = 'col-lg-4 col-md-6 mb-4 mb-lg-0' %}
+            {% elseif loop.last %}
+              {% set row_subclass = 'col-lg-4 col-md-6' %}
+            {% endif %}
+            <div class="{{ row_subclass }}">
+                <div class="list-box d-flex align-items-center">
+                    <div class="list-icon">
+                        <i class="fas {{ row.entity.field_icons.value }}"></i>
+                    </div>
+                    <div class="content">
+                        <h3>{{ row.entity.field_list_title.value }}</h3>
+                        <p>{{ row.entity.field_body.value }} </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endblock %}

@@ -1,0 +1,14 @@
+{% extends "@stable/block/block.html.twig" %}
+  {% block content %}
+  <div class="sidebar-section">
+    <div class="recent-posts">
+        <h4>Recent Posts</h4>
+        <ul>
+            {% for row in content["view_build"]["#rows"][0]['#rows'] %}
+              {% set node_id = row['#node'].nid.0.value %}
+            <li><a href="{{ path('entity.node.canonical', {'node': node_id}) }}">{{ row['#node'].title.0.value }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+   </div>
+  {% endblock %}

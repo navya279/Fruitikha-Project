@@ -1,0 +1,23 @@
+<?php
+
+function custom_cron_cron(){
+    $config = \Drupal::service('config.factory')->getEditable('system.site');
+    $last_run_per_5_minuts = \Drupal::state()->get('custom_cron.last_run_5_minuts', 0);
+    $request_time =  \Drupal::time()->getRequestTime();
+    // If 5 minutes passed since last time.
+    if (($request_time - $last_run_per_5_minuts) > 300) {
+
+        if(is_numeric($config->get('slogan')))
+        {
+            $value = $config->get('slogan') + 1;
+            $config->set('slogan', $value)->save();
+        }else{
+            $config->set('slogan', 0)->save();
+        }
+        // Update last run.
+        \Drupal::state()->set('custom_cron.last_run_5_minuts', $request_time);
+
+    }
+    
+  }
+ 

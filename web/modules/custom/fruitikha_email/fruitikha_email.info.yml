@@ -1,0 +1,4 @@
+name: Fruitikha Email Module
+type: module
+description: "This is module for email handling"
+core_version_requirement: ^8||^9

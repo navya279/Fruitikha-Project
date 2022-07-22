@@ -1,0 +1,14 @@
+{% extends "@stable/block/block.html.twig" %}
+  {% set block_title = label %}
+  {% set label = '' %}
+    {% block content %}
+        <!-- shop banner -->
+        <section class="shop-banner" style="background-image: url({{ file_url(content.field_banner_image.0['#item'].entity.uri.value) }});">
+            <div class="container">
+                <h3>{{ block_title }}</h3>
+                <div class="sale-percent"><span>{{ content.body }}</span></div>
+                <a href="shop.html" class="cart-btn btn-lg">{{ content.field_button_text }}</a>
+            </div>
+        </section>
+        <!-- end shop banner -->
+    {% endblock %}

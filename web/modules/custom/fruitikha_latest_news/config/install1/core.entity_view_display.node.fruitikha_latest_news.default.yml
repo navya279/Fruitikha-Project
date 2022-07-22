@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fruitikha_latest_news.body
+    - field.field.node.fruitikha_latest_news.field_news_image
+    - image.style.medium
+    - node.type.fruitikha_latest_news
+  module:
+    - image
+    - text
+    - user
+id: node.fruitikha_latest_news.default
+targetEntityType: node
+bundle: fruitikha_latest_news
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_news_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

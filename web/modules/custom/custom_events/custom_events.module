@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\custom_events\Events\CustomUserLoginEvent;
+use Drupal\custom_events\Events\nodePostSaveEvent;
+
+function custom_events_user_login($account) {
+    
+    $event = new CustomUserLoginEvent($account);
+    //get event dispatcher
+    $event_dispatcher = \Drupal::service('event_dispatcher');
+    $event_dispatcher->dispatch($event,CustomUserLoginEvent::EVENT_NAME);
+}
+
+function custom_events_node_insert($node) {
+    $uid = $node->uid->target_id;
+    $list = \Drupal\user\Entity\User::load($uid);
+    $event = new nodePostSaveEvent($node);
+    //get event dispatcher
+    $event_dispatcher = \Drupal::service('event_dispatcher');
+    $event_dispatcher->dispatch($event,nodePostSaveEvent::EVENT_NAME);
+    
+}

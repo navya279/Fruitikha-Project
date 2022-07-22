@@ -1,0 +1,13 @@
+services:
+  custom_events_events_subscriber:
+    class: 'Drupal\custom_events\EventSubscriber\ConfigMessage'
+    tags: 
+      - { name: 'event_subscriber' }
+  custom_events_user_login:
+    class: 'Drupal\custom_events\EventSubscriber\UserLogin'
+    tags: 
+      - { name: 'event_subscriber' }
+  custom_events_node_postsave:
+    class: 'Drupal\custom_events\EventSubscriber\entityPostSave'
+    tags: 
+      - { name: 'event_subscriber' }

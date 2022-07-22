@@ -1,0 +1,20 @@
+<div class="mt-150 mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="single-article-section">
+                    <div class="single-article-text">
+                        <div class="single-artcile-bg" style="background-image: url( {{ 
+                            file_url(node.field_image.entity.fileuri) }});
+                        height: 450px"></div>
+                        <p class="blog-meta">
+                            <span class="author"><i class="fas fa-user"></i> {{ node.Owner.name.value }}</span>
+                            <span class="date"><i class="fas fa-calendar"></i> {{ node.created.value|date("d F,Y") }}</span>
+                        </p>
+                        {{ content.body }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

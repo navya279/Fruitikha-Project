@@ -1,0 +1,4 @@
+name: Fruitikha Site Management
+type: module
+description: 'This is for fruitikha site management'
+core_version_requirement: ^8||^9

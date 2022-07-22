@@ -1,0 +1,20 @@
+ 
+
+ <!-- {{ dump (node |keys)}} -->
+ 
+ <div class="teaser">
+    <div class="single-latest-news">
+      <a href="{{ url }}"><div class="latest-news-bg news-bg-1" style="background-image: url({{ file_url(content.field_image.0['#item'].entity.uri.value) }}"></div></a>
+      <div class="news-text-box">
+         <h3><a href="{{ url }}">{{ label }}</a></h3>
+         <p class="blog-meta">
+            <span class="author"><i class="fas fa-user"></i> {{ node.Owner.name.value }}</span>
+            <span class="date"><i class="fas fa-calendar"></i> {{ node.created.value|date("d F,Y") }}</span>
+         </p>
+         <p class="excerpt">
+         {% set text = content.body|render|striptags %}
+         {{ text|length > 200 ? text|slice(0, 200) ~ '...' : text }}</p>
+         <a href="{{ url }}" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+      </div>
+   </div>
+ </div>

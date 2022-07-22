@@ -1,0 +1,13 @@
+	<!-- single article section -->
+	<div class="single-article-section">
+		<div class="single-article-text">
+			<div class="single-artcile-bg" style="background-image: url({{ file_url(content.field_image.0['#item'].entity.uri.value) }}"></div>
+			<p class="blog-meta">
+				<span class="author"><i class="fas fa-user"></i> {{ node.Owner.name.value }}</span>
+				<span class="date"><i class="fas fa-calendar"></i>{{ node.created.value|date("d F,Y") }}</span>
+			</p>
+			<h2>{{ label }}</h2>
+				{{ content.body }}
+		</div>
+	</div>
+	<!-- end single article section -->

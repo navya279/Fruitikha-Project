@@ -1,0 +1,5 @@
+<?php
+function custom_service_preprocess_node(&$variables){
+  $data = \Drupal::service('custom.current_user')->getData();
+ // dump($data);
+}

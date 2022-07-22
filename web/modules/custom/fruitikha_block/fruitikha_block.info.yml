@@ -1,0 +1,4 @@
+name: Fruitikha
+type: module
+description: this is fruitikha module
+core_version_requirement: ^8||^9

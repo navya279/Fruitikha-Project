@@ -1,0 +1,4 @@
+name: Custom cron module
+type: module
+description: creating custom cron job here.
+core_version_requirement: ^8||^9

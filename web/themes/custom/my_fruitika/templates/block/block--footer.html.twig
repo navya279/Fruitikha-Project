@@ -1,0 +1,69 @@
+{% extends "@stable/block/block--system-menu-block.html.twig" %}
+  {% block content %}
+   <!-- footer -->
+	 <div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">About Company</h2>
+						<p>{{ content.custom_site_settings.about_company }}</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Address</h2>
+						{{ content.custom_site_settings.address }}
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Pages</h2>
+                        {{ content.footer_menu }}
+						<!-- <ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="services.html">Shop</a></li>
+							<li><a href="news.html">News</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul> -->
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">Subscribe</h2>
+						<p>{{ content.custom_site_settings.subscribe }}</p>
+						<form action="index.html">
+							<input type="email" placeholder="Email">
+							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+	
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights &copy; {{ "now"|date('Y') }} - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="{{ content.custom_site_settings.facebook_links }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="{{ content.custom_site_settings.twitter_links }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="{{ content.custom_site_settings.insta_links }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+  {% endblock %}

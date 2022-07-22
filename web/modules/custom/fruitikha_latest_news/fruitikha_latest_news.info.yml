@@ -1,0 +1,10 @@
+name: 'Frutikha Latest News'
+type: module
+description: 'This is frutikha latest news module'
+core_version_requirement: ^8||^9
+dependencies:
+  - 'drupal:image'
+  - 'drupal:text'
+  - 'drupal:path'
+  - 'drupal:user'
+  - menu_ui

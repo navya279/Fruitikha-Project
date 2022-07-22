@@ -1,0 +1,4 @@
+name: Custom Rest Api
+type: module
+description: 'This is custom rest Api'
+core_version_requirement: ^8||^9

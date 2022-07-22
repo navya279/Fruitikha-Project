@@ -1,0 +1,17 @@
+name: fruitikha custom theme
+type: theme
+description: 'this is my fruitikha custom theme'
+package: other
+core_version_requirement: ^8||^9.4
+version: VERSION
+base theme: stable
+regions: 
+  header: Header
+  content: Content
+  right_side: Right side
+  footer: Footer
+libraries:
+  - my_fruitika/common_libraries
+libraries-override:
+  # Replace an entire library.
+  core/jquery: my_fruitika/jquery

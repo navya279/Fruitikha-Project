@@ -1,0 +1,29 @@
+<?php
+/**
+ * Update fruitikha_block.settings values when module install.
+ */
+function fruitikha_site_install() {
+    //get config settings and set new values
+    $config = \Drupal::service('config.factory')->getEditable('fruitikha_block.settings');
+    $config->set('about_company','Fruitikha New Site');
+    $config->set('address','Fruitikha New Site Address');
+    $config->set('insta_links','https://www.instagram.com/explore/tags/fruits/?hl=en');
+    $config->save(); 
+}
+/**
+ * Update fruitikha_block.settings values after module installation.
+ * run this page update.php (http://localhost/navya/fruitikha/web/update.php) .
+ * 9001 - is the version 9 and numbers .for next update give 9002
+ */
+function fruitikha_site_update_9001() {
+    $config = \Drupal::service('config.factory')->getEditable('fruitikha_block.settings');
+    $config->set('address','New Site Address 1, 1235176,88999');
+    $config->set('twitter_links','https://twitter.com/fruits_veggies?lang=en');
+    $config->save();
+}
+
+function fruitikha_site_update_9002() {
+    $config = \Drupal::service('config.factory')->getEditable('fruitikha_block.settings');
+    $config->set('about_company','Fruitikha website is for fruit sales');
+    $config->save();
+}

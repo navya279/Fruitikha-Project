@@ -1,0 +1,83 @@
+<?php
+function my_fruitika_preprocess_block(&$vars) {
+
+    if( $vars['plugin_id'] == "system_menu_block:footer" ) {
+
+       $custom_settings = \Drupal::config('fruitikha_block.settings');
+       // empty contents data and assign to footer menu (content is free now).again footer menu assign to content
+       $vars['content'] = ['footer_menu' => $vars['content']];
+       $vars['content']['custom_site_settings'] =[
+        "about_company" => [
+            "#plain_text" => $custom_settings->get('about_company'),
+        ],
+        "address" => [
+            "#plain_text" => $custom_settings->get('address'),
+        ],
+        "subscribe" => [
+            "#plain_text" => $custom_settings->get('subscribe'),
+        ],
+        "twitter_links" => [
+            "#plain_text" => $custom_settings->get('twitter_links'),
+        ],
+        "facebook_links" => [
+            "#plain_text" => $custom_settings->get('facebook_links'),
+        ],
+        "insta_links" => [
+            "#plain_text" => $custom_settings->get('insta_links'),
+        ],
+        
+      ];
+      //dump($vars);
+      // set cache tag for this config settings
+      $vars['#cache'] = [
+         "tags" => ['config:fruitikha_block.settings']
+          ];
+    }
+}
+/**
+ *  hook_form_FORM_ID_alter()
+ *  Form alter for contact us
+ */ 
+
+function my_fruitika_form_contact_message_feedback_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    $form['#prefix'] = '<div class="contact-from-section mt-150 mb-150">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-lg-8 mb-5 mb-lg-0">
+                               <div class="form-title">
+                                <h2>Have you any question?</h2>
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p>
+                               </div>
+                               <div id="form_status"></div>
+                                  <div class="contact-form">';
+    $form['#suffix'] = '</div
+                          </div>
+                            </div>
+                                </div>
+                                   </div> ';
+    $form['field_name']["#prefix"] ='<div class ="form_fields">';
+    $form['field_name']['#suffix'] = '</div>';
+    $form['subject']['widget'][0]['value']['#title']='';
+    $form['message']['widget'][0]['value']['#title']='';
+    $form['field_name']['widget'][0]['value']['#title']='';
+    $form['field_email']['widget'][0]['value']['#title']='';
+    $form['field_phone']['widget'][0]['value']['#title']='';
+    return $form;
+  
+}
+/**
+ * change page title in news page(news title to single news)
+ */
+function my_fruitika_preprocess_block__page_title_block(&$vars) {
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      if($node->bundle() == 'article' )
+      {
+        $vars['content']['#title'] = [
+            "#markup" => '<p>Read the Details</p> <span> Single News</span>',
+        ];
+      }
+    }
+}
+

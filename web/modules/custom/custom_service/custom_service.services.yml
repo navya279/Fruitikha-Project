@@ -1,0 +1,5 @@
+services:
+  custom.current_user:
+    class: Drupal\custom_service\getCurrentUser
+    arguments: ['@current_user','@entity_type.manager']
+    # Arguments contains the names of the services that need to be injected inside our custom service.  '@current_user' is in our case.
